@@ -17,61 +17,141 @@
 
     <!-- MAIN CONTENT -->
     <main class="app-content">
-        <div class="container">
-            <!-- SIDEBAR -->
-            <aside class="sidebar">
-                <div class="main-logo">
-                    <a href="#">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <section class="sidebar-top">
+
+                <!-- SPOTIFY LOGO -->
+                <div class="logo">
+                    <a class="main-logo" href="#">
                         <img src="./img/logo.svg" alt="spotify logo">
                     </a>
                 </div>
-                <div class="nav nav-home">
-                    <a href="#">
-                        <img src="./img/home.svg" alt="home img">
-                        <span>Home</span>
-                    </a>
-                </div>
-                <div class="nav nav-search">
-                    <a href="#">
-                        <img src="./img/search.svg" alt="search img">
-                        <span>Cerca</span>
-                    </a>
-                </div>
-                <div class="nav nav-library">
-                    <a href="#">
-                        <img src="./img/libreria.svg" alt="library img">
-                        <span>La tua libreria</span>
-                    </a>
-                </div>
-                <!-- PLAYLIST -->
+                    <!-- PRIMARY LINKS -->
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/home.svg" alt="home img">Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/search.svg" alt="search img">Cerca
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="./img/libreria.svg" alt="library img">La mia libreria
+                                </a>
+                            </li>
+                            <!-- PLAYLIST -->
+                            <li>
+                                <h3 class="white-text">PLAYLIST</h3>
+                                <ul class="playlist">
+                                    <li>
+                                        <a href="#">
+                                            <i class="fas fa-plus-square"></i>
+                                            Crea Playlist
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nome Playlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nome Playlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nome Playlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nome Playlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nome Playlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nome Playlist</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Nome Playlist</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+            </section>
 
-            </aside>
-            <!-- GALLERY WITH ALBUMS -->
-            <div class="gallery">
-                <!-- FAKE HEADER -->
-                <div class="fake-header">
-                    <button class="white-text">effettua l'upgrade</button>
+            <!-- ACCOUNT -->
+            <section class="sidebar-bottom">
+                <i class="far fa-arrow-alt-circle-down"></i>Installa app
+                <hr>
+                <div class="account">
+                    <div class="profile-pic">
+                        <img src="./img/profile.svg" alt="profile pic">
+                    </div>
+                    <div class="white-text">Jhon Doe</div>
                 </div>
-                
+            </section>
+        </aside>
+
+        <!-- GALLERY WITH ALBUMS -->
+        <div class="gallery">
+            <!-- FAKE HEADER -->
+            <div class="fake-header">
+                <button class="white-text">effettua l'upgrade</button>
             </div>
+
+            <div class="scrollable">
+                <nav class="content-menu">menu</nav>
+
+                <section class="content-category">
+                    <h2 class="white-text">Category title</h2>
+                    <ul class="album-list">
+                        <li class="album"></li>
+                        <li class="album"></li>
+                        <li class="album"></li>
+                        <li class="album"></li>
+                        <li class="album"></li>
+                        <li class="album"></li>
+                    </ul>
+                </section>
+                <section class="content-category">
+                    <h2 class="white-text">Category title</h2>
+                    <ul class="album-list">
+                        <li class="album"></li>
+                        <li class="album"></li>
+                    </ul>
+                </section>
+                <section class="content-category">
+                    <h2 class="white-text">Category title</h2>
+                    <ul class="album-list">
+                        <li class="album"></li>
+                        <li class="album"></li>
+                    </ul>
+                </section>
+            </div>
+
         </div>
+    
     </main>
 
     <!-- FOOTER -->
-    <footer class="app-footer">
+    <footer class="player">
 
         <!-- SONG COVER -->
-        <div class="foot-left">
+        <div class="player-left">
             cover
         </div>
 
         <!-- PLAYER -->
-        <div class="foot-center">
+        <div class="player-center">
             player
         </div>
 
         <!-- VOLUME CONTROL -->
-        <div class="foot-right">
+        <div class="player-right">
             volume
         </div>
 
