@@ -30,6 +30,10 @@ img {
     width: 100%;
 }
 
+svg {
+    fill: currentcolor;
+}
+
 ul li {
     list-style: none;
 }
@@ -75,12 +79,13 @@ ul li {
     margin: 20px 15px 30px;
 }
 
-.sidebar-top ul li a img {
+.sidebar-top ul li a svg {
     width: 40px;
     padding-right: 10px;
 }
 
-.sidebar-top ul li a div {
+.sidebar-top ul li a div,
+.playlist li a {
     display: flex;
     align-items: center;
 }
@@ -89,8 +94,14 @@ ul li {
     margin-bottom: 30px;
 }
 
-.sidebar-top ul li:not(.playlist li) {
-    margin: 0 15px 10px;
+.sidebar-top ul:not(.playlist) li {
+    padding: 0 10px;
+    margin-bottom: 10px;
+}
+
+.sidebar-top ul li.vert-bar {
+    border-left: 5px solid transparent;
+    transition: border-color .3s;
 }
 
 /* PLAYLIST */
@@ -145,6 +156,7 @@ ul li {
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 10;
     text-align: right;
     width: 100%;
     height: 80px;
@@ -159,6 +171,7 @@ ul li {
     border: 1px solid #fff;
     border-radius: 20px;
     cursor: pointer;
+    transition: transform .3s;
 }
 
 .gallery .scrollable {
@@ -181,7 +194,7 @@ ul li {
     margin: 10px;
 }
 
-.content-menu ul li:first-child {
+.content-menu ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -189,10 +202,12 @@ ul li {
 }
 
 .horizontal-bar {
+    opacity: 0;
     width: 50px;
     height: 4px;
     margin-top: 5px;
     background: greenyellow;
+    transition: opacity .3s;
 }
 
 /* CONTENT CATEGORY */
@@ -312,8 +327,9 @@ ul li {
     margin-left: 15px;
 }
 
-.commands ul li .fa-play-circle {
+.commands ul li .play-button {
     font-size: 32px;
+    transition: transform .3s;
 }
 
 .bar {
@@ -321,15 +337,24 @@ ul li {
     align-items: center;
 }
 
-.bar span:nth-child(2) {
+.pr-bar {
+    position: relative;
+    display: flex;
+    flex-basis: 560px;
+    align-items: center;
+    height: 20px;
+}
+
+.bar .pr-bar span:first-child {
     width: 25%;
     height: 5px;
     margin-left: 15px;
     background: #fff;
     border-radius: 5px;
+    transition: background .3s;
 }
 
-.bar span:nth-child(3) {
+.bar .pr-bar span:last-child {
     width: 75%;
     height: 5px;
     margin-right: 15px;
@@ -344,22 +369,43 @@ ul li {
     margin: 0 10px;
 }
 
-.volume i {
+.volume i:not(.dot) {
     margin-right: 10px;
 }
 
-.volume span:first-of-type {
-    width: 25%;
+.volume div:first-child,
+.volume .volume-bar {
+    display: flex;
+    align-items: center;
+}
+
+.volume .volume-bar {
+    position: relative;
+    flex-basis: 130px;
+    height: 20px;
+}
+
+.volume .volume-bar span:first-child {
+    width: 30%;
     height: 5px;
     background: #fff;
     border-radius: 5px;
+    transition: background .3s;
 }
 
-.volume span:last-of-type {
-    width: 75%;
+.volume .volume-bar span:last-child {
+    width: 70%;
     height: 5px;
     background: #6e6e6e;
     border-radius: 5px;
+}
+
+.pr-bar .dot,
+.player-right .dot {
+    position: absolute;
+    left: 25%;
+    opacity: 0;
+    transition: opacity .3s;
 }
 
 
@@ -407,14 +453,19 @@ MEDIA QUERIES
         display: block;
     }
 
+    .sidebar-top ul li a .small-img {
+        width: 20px;
+        padding-right: 0;
+    }
+
     /* adjusting spacing */
     .sidebar-top .logo {
         width: 30px;
         margin: 20px 5px;
     }
 
-    .sidebar-top ul li:not(.playlist li) {
-        margin: 0 5px 10px;
+    .sidebar-top ul li.vert-bar {
+        border: none;
     }
 
     /*
@@ -430,6 +481,11 @@ MEDIA QUERIES
 HOVER STATUS
 *******************************/
 
+/* SIDEBAR PRIMARY LINKS HOVER */
+.sidebar-top ul li.vert-bar:hover {
+    border-color: greenyellow;
+}
+
 /* ALBUM HOVER */
 .album-list .album .album-img .layover:hover {
     opacity: 1;
@@ -438,4 +494,33 @@ HOVER STATUS
 /* LINK HOVER */
 a:hover {
     color: #fff;
+    fill: #fff;
+}
+
+.content-menu ul li:hover .horizontal-bar {
+    opacity: 1;
+}
+
+/* BUTTON HOVER */
+.fake-header button:hover {
+    transform: scale(1.10);
+}
+
+/* PLAYER HOVER */
+
+/* play button */
+.commands ul li .play-button:hover {
+    transform: scale(1.10);
+}
+
+/* progress and volume bar */
+.bar .pr-bar:hover span:first-child,
+.volume .volume-bar:hover span:first-child {
+    background: greenyellow;
+}
+
+/* dot */
+.bar .pr-bar:hover .dot,
+.volume .volume-bar:hover .dot {
+    opacity: 1;
 }
