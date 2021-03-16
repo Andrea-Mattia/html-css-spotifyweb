@@ -38,6 +38,10 @@ ul li {
     color: #fff;
 }
 
+.fz-10 {
+    font-size: 10px;
+}
+
 /* MAIN CONTEN */
 .app-content {
     display: flex;
@@ -51,7 +55,7 @@ ul li {
 
 /* SIDEBAR */
 .sidebar {
-    flex-basis: 230px;
+    width: 230px;
     background: #000;
 }
 
@@ -104,6 +108,13 @@ ul li {
     margin-bottom: 15px;
 }
 
+.sidebar-bottom hr {
+    height: 2px;
+    background: #6E6E6E;
+    border: 1px transparent;
+    border-radius: 5px;
+}
+
 .sidebar-bottom .account {
     display: flex;
     align-items: center;
@@ -122,7 +133,7 @@ ul li {
 /* GALLERY */
 .gallery {
     position: relative;
-    flex-grow: 1;
+    width: calc(100% - 230px);
 }
 
 .fake-header {
@@ -224,7 +235,112 @@ ul li {
     background: #282828;
 }
 
+.player-center {
+    flex-basis: 600px;
+}
+
 .player-left,
 .player-right {
-    flex-basis: 250px;
+    flex-basis: 230px;
+}
+
+/* SONG COVER */
+.song-cover {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 15px;
+}
+
+.song-cover div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.song-cover div:first-child img {
+    width: 50px;
+}
+
+.song-cover div:first-child h4,
+.song-cover div:first-child p {
+    padding-left: 10px;
+}
+
+/* COMMANDS */
+.commands ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.commands ul li:not(:first-child) {
+    margin-left: 15px;
+}
+
+.commands ul li .fa-play-circle {
+    font-size: 32px;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+}
+
+.bar span:nth-child(2) {
+    width: 25%;
+    height: 5px;
+    margin-left: 15px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.bar span:nth-child(3) {
+    width: 75%;
+    height: 5px;
+    margin-right: 15px;
+    background: #6e6e6e;
+    border-radius: 5px;
+}
+
+/* VOLUME CONTROL */
+.volume {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.volume i {
+    margin-right: 10px;
+}
+
+.volume span:first-of-type {
+    width: 25%;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.volume span:last-of-type {
+    width: 75%;
+    height: 5px;
+    background: #6e6e6e;
+    border-radius: 5px;
+}
+
+
+/***********************************
+MEDIA QUERIES
+************************************/
+
+@media screen and (max-width: 1199px) {
+    .album-list .album {
+        flex-basis: calc(100% / 4 - 15px);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .album-list .album {
+        flex-basis: calc(100% / 2 - 15px);
+    }
 }
