@@ -422,6 +422,17 @@ MEDIA QUERIES
     }
 }
 
+/* HIDING FAKE HEADER FOR READABILITY */
+@media screen and (max-height: 560px) {
+    .fake-header {
+        display: none;
+    }
+
+    .gallery .scrollable {
+        padding-top: 10px;
+    }
+}
+
 /* SMALL TO TABLET DEVICES */
 @media screen and (max-width: 767px) {
 
